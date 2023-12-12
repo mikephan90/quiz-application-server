@@ -9,8 +9,7 @@ module.exports = {
   Mutation: {
     addQuestions: async (_, { questions }) => {
       try {
-        const newQuestions = await Question.insertMany(questions);
-        return newQuestions;
+        return await Question.insertMany(questions);
       } catch (error) {
         console.error(error);
         throw new Error('Error adding questions');
